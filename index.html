@@ -8,7 +8,7 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9ff;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,52 +19,80 @@
       background: white;
       padding: 2rem;
       border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.07);
       width: 90%;
       max-width: 500px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
     }
     h1 {
       text-align: center;
-      color: #5c4dff;
+      color: #667eea;
       margin-bottom: 1rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     label {
       display: block;
       margin: 0.5rem 0 0.2rem;
       font-weight: 600;
+      color: #4a5568;
     }
     input[type="text"], input[type="number"], input[type="email"], input[type="file"] {
       width: 100%;
       padding: 0.5rem;
-      border: 1px solid #ccc;
+      border: 2px solid #e2e8f0;
       border-radius: 8px;
       margin-bottom: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      background-color: #f8fafc;
+    }
+    input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="file"]:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      background-color: white;
     }
     button {
       width: 100%;
       padding: 0.7rem;
-      background-color: #5c4dff;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       border: none;
       border-radius: 10px;
       font-size: 1rem;
       cursor: pointer;
       margin-top: 0.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+    button:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
     }
     button:disabled {
-      background-color: #999;
+      background: #a0aec0;
       cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
     }
     #counter {
       text-align: center;
       margin: 0.5rem 0;
       font-weight: bold;
+      color: #667eea;
+      background: rgba(102, 126, 234, 0.1);
+      padding: 0.5rem;
+      border-radius: 8px;
     }
     #message {
       margin-top: 1rem;
       font-size: 1.1rem;
-      color: green;
+      color: #38a169;
       text-align: center;
+      background: rgba(56, 161, 105, 0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      border-left: 4px solid #38a169;
     }
     .hidden {
       display: none;
